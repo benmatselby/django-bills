@@ -7,8 +7,8 @@ install: ## Install the dependencies
 
 .PHONY: bootstrap
 bootstrap: ## Bootstrap the application
+	pipenv run python manage.py makemigrations bills
 	pipenv run python manage.py migrate
-	pipenv run python manage.py makemigrations
 	# pipenv run python manage.py createsuperuser
 
 .PHONY: run
