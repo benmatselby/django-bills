@@ -28,6 +28,7 @@ clean: ## Clean the local folder
 .PHONY: install
 install: ## Install and run the dependencies
 	uv sync
+	uv run pre-commit install
 
 .PHONY: bootstrap
 bootstrap: ## Bootstrap the application
