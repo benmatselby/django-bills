@@ -1,5 +1,5 @@
 [project]
-name = "django-bills"
+name = "bills"
 version = "0.1.0"
 description = "Application to store household bills"
 readme = "README.md"
