@@ -31,4 +31,5 @@ make run
 ## To do
 
 - Hook up to GitHub Actions
-- Add some tests
+- Add some tests so need MySQL running in GHA
+- Add pre-commit
