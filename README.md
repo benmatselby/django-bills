@@ -15,7 +15,7 @@ Pre-requisites:
 Then you can run:
 
 ```shell
-make install boostrap
+make install bootstrap
 ```
 
 This will install Python for you, the project dependencies, and run MySQL in docker.
@@ -25,7 +25,7 @@ This will install Python for you, the project dependencies, and run MySQL in doc
 We can now run the application.
 
 ```shell
-make run
+make dependencies-run run
 ```
 
 ## To do
