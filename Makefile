@@ -36,6 +36,7 @@ install: ## Install and run the dependencies
 bootstrap: ## Bootstrap the application
 	uv run python manage.py migrate
 	uv run python manage.py createsuperuser
+	uv run python manage.py makemigrations
 
 .PHONY: run
 run: ## Run the application
