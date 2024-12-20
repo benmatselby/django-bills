@@ -1,0 +1,7 @@
+*.pyc
+
+# Environment
+.venv
+
+# Tools
+.ruff_cache

@@ -1,0 +1,11 @@
+[project]
+name = "django-bills"
+version = "0.1.0"
+description = "Application to store household bills"
+readme = "README.md"
+requires-python = ">=3.13"
+dependencies = [
+    "django>=5.1.4",
+    "mysqlclient>=2.2.6",
+    "ruff>=0.8.4",
+]
