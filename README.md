@@ -27,3 +27,8 @@ We can now run the application.
 ```shell
 make run
 ```
+
+## To do
+
+- Hook up to GitHub Actions
+- Add some tests
