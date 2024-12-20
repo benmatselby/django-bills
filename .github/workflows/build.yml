@@ -12,6 +12,19 @@ jobs:
 
     name: Build
 
+    services:
+      mysql:
+        image: mysql:9.1.0
+        env:
+          MYSQL_ROOT_PASSWORD: password
+        ports:
+          - 3306:3306
+        options: >-
+          --health-cmd="mysqladmin ping"
+          --health-interval=10s
+          --health-timeout=5s
+          --health-retries=3
+
     steps:
       - uses: actions/checkout@v2
 
@@ -28,3 +41,6 @@ jobs:
 
       - name: Lint
         run: make lint
+
+      - name: Test
+        run: make test

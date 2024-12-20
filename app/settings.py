@@ -10,6 +10,7 @@ For the full list of settings and their values, see
 https://docs.djangoproject.com/en/4.2/ref/settings/
 """
 
+import os
 from pathlib import Path
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
@@ -77,10 +78,10 @@ WSGI_APPLICATION = "app.wsgi.application"
 DATABASES = {
     "default": {
         "ENGINE": "django.db.backends.mysql",
-        "NAME": "house",
-        "USER": "root",
-        "PASSWORD": "password",
-        "HOST": "127.0.0.1",
+        "NAME": os.environ.get("DATABASE_NAME", "house"),
+        "USER": os.environ.get("DATABASE_USER", "root"),
+        "PASSWORD": os.environ.get("DATABASE_PASSWORD", "password"),
+        "HOST": os.environ.get("DATABASE_HOST", "127.0.0.1"),
     }
 }
 

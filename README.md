@@ -30,5 +30,4 @@ make dependencies-run run
 
 ## To do
 
-- Hook up to GitHub Actions
-- Add some tests so need MySQL running in GHA
+- Add Water bills
