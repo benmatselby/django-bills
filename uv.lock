@@ -25,7 +25,7 @@ wheels = [
 ]
 
 [[package]]
-name = "django-bills"
+name = "bills"
 version = "0.1.0"
 source = { virtual = "." }
 dependencies = [
