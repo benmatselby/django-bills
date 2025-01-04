@@ -52,7 +52,7 @@ run: ## Run the application
 	DATABASE_PASSWORD=${DATABASE_PASSWORD} \
 	DATABASE_HOST=${DATABASE_HOST} \
 	DATABASE_NAME=${DATABASE_NAME} \
-	uv run python manage.py runserver
+	uv run python manage.py runserver 0.0.0.0:8000
 
 .PHONY: lint
 lint: ## Lint the application
