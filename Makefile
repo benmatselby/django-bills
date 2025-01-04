@@ -1,8 +1,8 @@
 MYSQL_VERSION ?= 9.1.0
-DATABASE_USER ?= root
-DATABASE_PASSWORD ?= password
-DATABASE_HOST ?= 127.0.0.1
-DATABASE_NAME ?= house
+BILLS_DATABASE_USER ?= root
+BILLS_DATABASE_PASSWORD ?= password
+BILLS_DATABASE_HOST ?= 127.0.0.1
+BILLS_DATABASE_NAME ?= house
 
 
 .PHONY: explain
@@ -42,16 +42,16 @@ bootstrap: ## Bootstrap the application
 
 .PHONY: dependencies-run
 dependencies-run: ## Run the dependencies
-	docker run -d -p 3306:3306 -eMYSQL_ROOT_PASSWORD=${DATABASE_PASSWORD} --name mysql mysql:${DATABASE_PASSWORD}
+	docker run -d -p 3306:3306 -eMYSQL_ROOT_PASSWORD=${BILLS_DATABASE_PASSWORD} --name mysql mysql:${BILLS_DATABASE_PASSWORD}
 	sleep 10
-	docker exec -it mysql mysql -h 127.0.0.1 -uroot -p${DATABASE_PASSWORD} -e "CREATE DATABASE IF NOT EXISTS house;"
+	docker exec -it mysql mysql -h 127.0.0.1 -uroot -p${BILLS_DATABASE_PASSWORD} -e "CREATE DATABASE IF NOT EXISTS house;"
 
 .PHONY: run
 run: ## Run the application
-	DATABASE_USER=${DATABASE_USER} \
-	DATABASE_PASSWORD=${DATABASE_PASSWORD} \
-	DATABASE_HOST=${DATABASE_HOST} \
-	DATABASE_NAME=${DATABASE_NAME} \
+	BILLS_DATABASE_USER=${BILLS_DATABASE_USER} \
+	BILLS_DATABASE_PASSWORD=${BILLS_DATABASE_PASSWORD} \
+	BILLS_DATABASE_HOST=${BILLS_DATABASE_HOST} \
+	BILLS_DATABASE_NAME=${BILLS_DATABASE_NAME} \
 	uv run python manage.py runserver 0.0.0.0:8000
 
 .PHONY: lint
