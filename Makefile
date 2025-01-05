@@ -48,10 +48,6 @@ dependencies-run: ## Run the dependencies
 
 .PHONY: run
 run: ## Run the application
-	BILLS_DATABASE_USER=${BILLS_DATABASE_USER} \
-	BILLS_DATABASE_PASSWORD=${BILLS_DATABASE_PASSWORD} \
-	BILLS_DATABASE_HOST=${BILLS_DATABASE_HOST} \
-	BILLS_DATABASE_NAME=${BILLS_DATABASE_NAME} \
 	uv run python manage.py runserver 0.0.0.0:8000
 
 .PHONY: lint
