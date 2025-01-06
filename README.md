@@ -27,7 +27,3 @@ We can now run the application.
 ```shell
 make dependencies-run run
 ```
-
-## To do
-
-- Add Water bills
