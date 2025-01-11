@@ -40,11 +40,13 @@ bootstrap: ## Bootstrap the application
 	uv run python manage.py createsuperuser
 	uv run python manage.py makemigrations
 
-.PHONY: dependencies-run
-dependencies-run: ## Run the dependencies
-	docker run -d -p 3306:3306 -eMYSQL_ROOT_PASSWORD=${BILLS_DATABASE_PASSWORD} --name mysql mysql:${BILLS_DATABASE_PASSWORD}
-	sleep 10
-	docker exec -it mysql mysql -h 127.0.0.1 -uroot -p${BILLS_DATABASE_PASSWORD} -e "CREATE DATABASE IF NOT EXISTS house;"
+.PHONY: migrations
+migrations: ## Create the migrations
+	uv run python manage.py makemigrations
+
+.PHONY: migrate
+migrate: ## Migrate the database
+	uv run python manage.py migrate
 
 .PHONY: run
 run: ## Run the application
