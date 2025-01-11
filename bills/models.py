@@ -21,10 +21,10 @@ class EnergyBill(models.Model):
     type = models.ForeignKey(Type, on_delete=models.CASCADE, default=1)
     date_start = models.DateField()
     date_end = models.DateField()
-    units_kwh = models.IntegerField()
+    units_kwh = models.DecimalField(max_digits=10, decimal_places=2)
     cost = models.DecimalField(max_digits=10, decimal_places=2)
     estimated = models.BooleanField()
-    reading = models.IntegerField()
+    reading = models.DecimalField(max_digits=10, decimal_places=2)
     comments = models.CharField(max_length=200)
 
     def __str__(self):
@@ -39,11 +39,11 @@ class WaterBill(models.Model):
     type = models.ForeignKey(Type, on_delete=models.CASCADE, default=1)
     date_start = models.DateField()
     date_end = models.DateField()
-    water_m3 = models.IntegerField()
+    water_m3 = models.DecimalField(max_digits=10, decimal_places=2)
     sewage_m3 = models.DecimalField(max_digits=10, decimal_places=2)
     cost = models.DecimalField(max_digits=10, decimal_places=2)
     estimated = models.BooleanField()
-    reading = models.IntegerField()
+    reading = models.DecimalField(max_digits=10, decimal_places=2)
     comments = models.CharField(max_length=200)
 
     def __str__(self):
