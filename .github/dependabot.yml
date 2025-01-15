@@ -7,3 +7,6 @@ updates:
       interval: "weekly"
     commit-message:
       prefix: "GHA"
+
+  # uv is currently not supported
+  # https://github.com/dependabot/dependabot-core/issues/10478
