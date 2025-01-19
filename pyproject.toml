@@ -11,6 +11,10 @@ dependencies = [
     "ruff>=0.8.4",
 ]
 
+[tool.pyright]
+venvPath = "."
+venv = ".venv"
+
 [tool.ruff.lint.isort]
 force-single-line = true
 
